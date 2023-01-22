@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en" >
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.rtl.min.css" integrity="sha384-dc2NSrAXbAkjrdm9IYrX10fQq9SDG6Vjz7nQVKdKcJl3pC+k37e7qJR5MVSCS+wR" crossorigin="anonymous">
+
+    <title>Office Employee Management System</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css">
+  </head>
+  <body>
+    <div class="container">
+        <h1 style="color:SlateBlue;">Add Employee</h1>
+        <hr>
+        <form action="/add_emp" method="post">
+         {%csrf_token%}
+         
+          <div class="mb-3">
+            <label for="First_Name" >First  Name</label><br>
+            <input type="text" id="First_Name"name="First_Name" value="{{First_Name}}" >
+      <br>
+            <label for="Last_Name">Last Name</label><br>
+            <input type="text" id="Last_Name"value="{{Last_Name}}"name="Last_Name">
+<br>
+            
+            <label for="Salary">Salary</label><br>
+            <input type="number" id="Salary"value="{{Salary}}"name="Salary">
+
+            <br>
+            <label for="Bonus">Bonus</label><br>
+            <input type="number" id="Bonus"value="{{Bonus}}"name="Bonus">
+            <br>
+            
+            <label for="Phone">Phone</label><br>
+            <input type="number" id="Phone"value="{{Phone}}"name="Phone">
+
+            
+
+            <br>
+            <label for="role">Role</label><br>
+            <!--
+            <input type="number" id="Role"value="{{Role}}"name="Role">
+      <br>-->
+      <select name='role' id='role'>
+        {% for role in roles %}
+        <option value="{{role.id}}">{{role.role}}</option>
+        {% endfor %}
+      </select<br>
+            <label for="department">Department</label><br>
+           <!-- <select name='department' id='department'>-->
+              {% for dept in depts %}
+              <option value="{{dept.id}}">{{dept.department}}</option>
+              {% endfor %}
+            </select>
+            <!--
+            <select class="form-select mb-3" aria-label="Default select example">
+              <option selected>Open this select menu</option>
+              {% for depts in depts %}
+              <option value="{{Department.id}}"> {{Department.Name}}</option>
+              <option value="2">Two</option>
+              <option value="3">Three</option>
+            </select>
+            <input type="number" id="Department"value="{{Department}}"name="Department">
+            
+            {%  endfor %}
+        
+        
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+            </ul>
+          </div>
+            <br>
+        -->
+        <br>
+            <label for="Location">Location</label><br>
+            <input type="text" id="Location"value="{{Location}}"name="Location">
+      <br><hr>
+          <button type="submit" class="btn btn-danger">Submit</button>
+        </form>
+        
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script>
+    -->
+  </body>
+</html>
